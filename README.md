@@ -7,7 +7,7 @@ Every table and figure in the revised manuscript is produced by the scripts belo
 ## Quick start
 
 ```sh
-pip install -r requirements.txt
+pip install -r requirements-linux.txt   # or requirements.txt on macOS
 # put the five public datasets in data/ (see data/README.md)
 sh run_all.sh          # about 7-10 minutes on an 8-core laptop
 ```
@@ -40,7 +40,17 @@ Table and figure numbers refer to the revised manuscript. Fig. 1 (`figures/fig1_
 
 ## Software
 
-Python 3.13. `requirements.txt` pins the macOS package versions listed above; the reported Random Forest values come from the Linux versions.
+Python 3.13. Two pinned environments are provided:
+
+| File | Environment | Use |
+|---|---|---|
+| `requirements-linux.txt` | Linux: Python 3.13.5, NumPy 2.3.5, SciPy 1.17.0, scikit-learn 1.8.0 | Reproduces every value reported in the paper, including Random Forest |
+| `requirements.txt` | macOS: Python 3.13.12, NumPy 2.4.4, SciPy 1.17.1, scikit-learn 1.8.0 | Same logistic regression results; Random Forest values differ slightly |
+
+```sh
+pip install -r requirements-linux.txt   # Linux configuration used for the reported values
+sh run_all.sh
+```
 
 ## Data
 
